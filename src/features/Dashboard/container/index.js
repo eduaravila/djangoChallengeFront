@@ -15,7 +15,7 @@ const Dashboard = () => {
     data.append("username", username);
     data.append("password", password);
 
-    let res = await fetch("http://127.0.0.1:8000/access/", {
+    let res = await fetch(process.env.REACT_APP_API + "access/", {
       method: "POST",
       mode: "cors",
       cache: "default",
@@ -23,7 +23,7 @@ const Dashboard = () => {
     });
     let response = await res.json();
     setToken(response.token);
-    setusername(response.username)
+    setusername(response.username);
     setloginForm(false);
   };
 

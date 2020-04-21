@@ -21,7 +21,7 @@ const Body = ({ token }) => {
   let mapContainer = useRef(null);
 
   const getCars = async (cb) => {
-    let res = await fetch("http://127.0.0.1:8000/api/cars/", {
+    let res = await fetch(process.env.REACT_APP_API + "api/cars/", {
       mode: "cors",
       cache: "default",
       headers: {
@@ -38,7 +38,7 @@ const Body = ({ token }) => {
     data.append("lat", lat);
     data.append("lon", lng);
     data.append("placas", placas);
-    let res = await fetch("http://127.0.0.1:8000/api/cars/", {
+    let res = await fetch(process.env.REACT_APP_API + "api/cars/", {
       method: "POST",
       mode: "cors",
       cache: "default",
@@ -57,7 +57,7 @@ const Body = ({ token }) => {
     const data = new FormData();
 
     data.append("placas", current);
-    let res = await fetch("http://127.0.0.1:8000/api/cars/", {
+    let res = await fetch(process.env.REACT_APP_API + "api/cars/", {
       method: "DELETE",
       mode: "cors",
       cache: "default",
@@ -77,7 +77,7 @@ const Body = ({ token }) => {
     console.log(current);
     data.append("placas", current);
     data.append("newPlacas", newPlates);
-    let res = await fetch("http://127.0.0.1:8000/api/cars/", {
+    let res = await fetch(process.env.REACT_APP_API + "api/cars/", {
       method: "PATCH",
       mode: "cors",
       cache: "default",

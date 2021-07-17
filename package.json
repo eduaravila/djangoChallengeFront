@@ -1,5 +1,5 @@
 {
-  "prebuild": "[[ $CI = true ]] && npx pnpm@3 install -r --store=node_modules/.pnpm-store || echo skiping pnpm install",
+  "prebuild": "test \"$CI\" = true && npx pnpm install -r --store=node_modules/.pnpm-store || echo skiping pnpm install",
   "name": "django_challenge_front",
   "version": "0.1.0",
   "private": true,

@@ -40,6 +40,6 @@
     ]
   },
   "devDependencies": {
-    "pnpm": "^6.10.2"
+    "pnpm": "^7.33.4"
   }
 }
